@@ -17,3 +17,4 @@ def read_env(key: str, default: str | None = None) -> str:
 ENVIRONMENT = read_env("ENVIRONMENT", "dev")
 PORT = int(read_env("PORT", "3000"))
 JWT_SECRET = read_env("JWT_SECRET")
+DB_URL = read_env("DB_URL")
