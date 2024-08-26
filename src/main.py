@@ -11,4 +11,4 @@ def main(dev: bool = False) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(True)

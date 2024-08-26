@@ -4,7 +4,11 @@ from sqlalchemy.orm import sessionmaker
 
 from ..environment.read_env import DB_URL, TURSO_AUTH_TOKEN
 
-engine = create_engine(f"sqlite+{DB_URL}/?authToken={TURSO_AUTH_TOKEN}&secure=true", connect_args={"check_same_thread": False})
+engine = create_engine(
+    f"sqlite+{DB_URL}/?authToken={TURSO_AUTH_TOKEN}&secure=true",
+    connect_args={"check_same_thread": False},
+    echo=True,
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
