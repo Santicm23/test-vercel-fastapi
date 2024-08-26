@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
+from .routers import task_router
+
 app = FastAPI()
 
-@app.get("/hello")
-def hello():
-    return {"Hello": "World"}
+app.include_router(task_router, prefix="/tasks", tags=["tasks"])
